@@ -1,0 +1,37 @@
+server:
+  port: 8082
+
+spring:
+  kafka:
+    bootstrap-servers: http://35.237.201.4:9092
+  zipkin:
+    sender:
+      type: kafka
+  sleuth:
+    messaging:
+      kafka:
+        enabled: true
+    sampler:
+      probability: 1
+  boot:
+    admin:
+      client:
+        url: http://35.237.182.53:9000
+        instance:
+          prefer-ip: true
+  cloud:
+    config:
+      server:
+        git:
+          search-paths: customer-service, order-service, product-service
+          uri: https://github.com/karpoora/config-repository
+          username: sundarapandiank@yahoo.com
+          clone-on-start: true
+          password: Karnan22@
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
