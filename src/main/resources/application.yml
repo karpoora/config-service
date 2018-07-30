@@ -23,7 +23,7 @@ spring:
     config:
       server:
         git:
-          search-paths: customer-service, order-service, product-service
+          search-paths: customer-service, order-service, product-service, gateway-service
           uri: https://github.com/karpoora/config-repository
           username: sundarapandiank@yahoo.com
           clone-on-start: true
